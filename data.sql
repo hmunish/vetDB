@@ -24,4 +24,7 @@ INSERT INTO owners (full_name, age) VALUES ('Dean Winchester', 14);
 INSERT INTO owners (full_name, age) VALUES ('Jodie Whittaker', 28);
 
 
+Update animals SET species_id = (SELECT id FROM species WHERE name = 'Digimon') WHERE name LIKE '%mon';
+Update animals SET species_id = (SELECT id FROM species WHERE name = 'Pokemon') WHERE species_id IS NULL;
+
 
