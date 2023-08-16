@@ -33,17 +33,21 @@ CREATE TABLE species (
 /*DELETE species column from animals table*/
 ALTER TABLE animals DROP COLUMN species;
 
+/*Add species_id & owner_id columns*/
+ALTER TABLE animals ADD COLUMN owner_id INTEGER;
+ALTER TABLE animals ADD COLUMN species_id INTEGER;
+
 /*Add Foreign key*/
 ALTER TABLE IF EXISTS animals
-    ADD CONSTRAINT species_id FOREIGN KEY (id)
-    REFERENCES species (id) MATCH SIMPLE
-    ON UPDATE CASCADE
-    ON DELETE CASCADE
+    ADD CONSTRAINT fk_owner FOREIGN KEY (owner_id)
+    REFERENCES owners (id) MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE NO ACTION
     NOT VALID;
 
 ALTER TABLE IF EXISTS animals
-    ADD CONSTRAINT customer_id FOREIGN KEY (id)
-    REFERENCES owners (id) MATCH SIMPLE
+    ADD CONSTRAINT fk_species FOREIGN KEY (species_id)
+    REFERENCES public.species (id) MATCH SIMPLE
     ON UPDATE NO ACTION
     ON DELETE NO ACTION
     NOT VALID;
