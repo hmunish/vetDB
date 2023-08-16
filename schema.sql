@@ -47,7 +47,7 @@ ALTER TABLE IF EXISTS animals
 
 ALTER TABLE IF EXISTS animals
     ADD CONSTRAINT fk_species FOREIGN KEY (species_id)
-    REFERENCES public.species (id) MATCH SIMPLE
+    REFERENCES species (id) MATCH SIMPLE
     ON UPDATE NO ACTION
     ON DELETE NO ACTION
     NOT VALID;
