@@ -67,4 +67,4 @@ CREATE TABLE vets
 CREATE TABLE specializations ( species_id int, vet_id int);
 
 /*Add visits table*/
-CREATE TABLE visits (animal_id int, vet_id int, visit_data date);
+CREATE TABLE visits (animal_id int, vet_id int, visit_date date);
