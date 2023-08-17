@@ -51,3 +51,61 @@ SELECT species.name AS species , COUNT(animals.id) AS total_animals FROM species
 SELECT animals.name AS animal_name FROM animals JOIN owners ON animals.owner_id = owners.id WHERE owners.full_name = 'Jennifer Orwell';   
 SELECT animals.name AS animal_name FROM animals JOIN owners ON animals.owner_id = owners.id WHERE owners.full_name = 'Dean Winchester' AND animals.escape_attempts = 0;
 SELECT owners.full_name AS name , COUNT(animals.id) AS total_animals FROM owners JOIN animals ON owners.id = animals.owner_id GROUP BY owners.full_name ORDER BY total_animals DESC LIMIT 1;
+
+
+
+SELECT animals.name, visits.visit_date
+  FROM visits
+  LEFT JOIN animals ON animals.id = visits.animal_id
+  LEFT JOIN vets ON vets.id = visits.vet_id
+  WHERE vets.name = 'William Tatcher'
+  ORDER BY visits.visit_date DESC
+  LIMIT 1;
+
+SELECT DISTINCT animals.name
+  FROM visits
+  LEFT JOIN animals ON animals.id = visits.animal_id
+  LEFT JOIN vets ON vets.id = visits.vet_id
+  WHERE vets.name = 'Stephanie Mendez';
+
+SELECT vets.*, species.name
+  FROM vets
+  LEFT JOIN specializations ON vets.id = specializations.vet_id
+  LEFT JOIN species ON specializations.species_id = species.id;
+
+ SELECT animals.name, visits.visit_date
+  FROM visits
+  LEFT JOIN animals ON animals.id = visits.animal_id
+  LEFT JOIN vets ON vets.id = visits.vet_id
+  WHERE vets.name = 'Stephanie Mendez'
+  AND visit_date > '2020-04-01' AND visit_date < '2020-08-30';
+
+SELECT a.name FROM animals a JOIN visits v ON a.id = v.animal_id GROUP BY a.name ORDER BY COUNT(a.id) DESC LIMIT 1;
+
+SELECT animals.name, visits.visit_date
+  FROM visits
+  LEFT JOIN animals ON animals.id = visits.animal_id
+  LEFT JOIN vets ON vets.id = visits.vet_id
+  WHERE vets.name = 'Maisy Smith'
+  ORDER BY visits.visit_date ASC
+  LIMIT 1;
+
+  SELECT animals.*, vets.*, visits.visit_date
+  FROM visits
+  LEFT JOIN animals ON animals.id = visits.animal_id
+  LEFT JOIN vets ON vets.id = visits.vet_id
+  ORDER BY visits.visit_date DESC
+  LIMIT 1;
+
+SELECT count(*)
+  FROM visits
+  LEFT JOIN animals ON animals.id = visits.animal_id
+  LEFT JOIN vets ON vets.id = visits.vet_id
+  WHERE animals.species_id NOT IN (SELECT species_id FROM specializations WHERE vet_id = vets.id);
+
+SELECT animals.*, vets.*, visits.visit_date
+  FROM visits
+  LEFT JOIN animals ON animals.id = visits.animal_id
+  LEFT JOIN vets ON vets.id = visits.vet_id
+  ORDER BY visits.visit_date DESC
+  LIMIT 1;
