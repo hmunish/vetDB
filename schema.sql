@@ -51,3 +51,20 @@ ALTER TABLE IF EXISTS animals
     ON UPDATE NO ACTION
     ON DELETE NO ACTION
     NOT VALID;
+
+
+/*Add vets table*/
+CREATE TABLE vets
+(
+    id integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 ),
+    name character varying(255),
+    age integer,
+    date_of_graduation date,
+    PRIMARY KEY (id)
+);
+
+/*Add specializations table*/
+CREATE TABLE specializations ( species_id int, vet_id int);
+
+/*Add visits table*/
+CREATE TABLE visits (animal_id int, vet_id int, visit_data date);
