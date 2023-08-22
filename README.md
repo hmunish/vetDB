@@ -94,7 +94,7 @@ To run the project, execute the following SQL queries into local database.
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Author1**
+👤 **Munish Halai**
 
 - GitHub: [@githubhandle](https://github.com/hmunish)
 - Twitter: [@twitterhandle](https://twitter.com/hmunish5)
