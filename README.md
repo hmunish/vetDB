@@ -100,6 +100,11 @@ To run the project, execute the following SQL queries into local database.
 - Twitter: [@twitterhandle](https://twitter.com/hmunish5)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/munish-halai)
 
+👤 **Rabaya Rabu**
+
+- GitHub: [@rabayarabu](https://github.com/rabayarabu)
+- Twitter: [@rabaya_rabu](https://twitter.com/rabaya_rabu)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/rabaya-rabu-142721169/)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->

@@ -109,3 +109,8 @@ SELECT animals.*, vets.*, visits.visit_date
   LEFT JOIN vets ON vets.id = visits.vet_id
   ORDER BY visits.visit_date DESC
   LIMIT 1;
+
+  /* Performance Analyze */ 
+EXPLAIN ANALYZE SELECT COUNT(*) FROM visits where animal_id = 4;
+EXPLAIN ANALYZE SELECT * FROM visits where vet_id = 2;
+EXPLAIN ANALYZE SELECT * FROM owners where email = 'owner_18327@mail.com';
