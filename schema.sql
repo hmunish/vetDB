@@ -68,3 +68,15 @@ CREATE TABLE specializations ( species_id int, vet_id int);
 
 /*Add visits table*/
 CREATE TABLE visits (animal_id int, vet_id int, visit_date date);
+
+/*Add email column to owners table*/
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+
+/*Drop Not Null constraints on owners table full_name & age column*/
+ALTER TABLE owners ALTER COLUMN full_name DROP NOT NULL;
+ALTER TABLE owners ALTER COLUMN age DROP NOT NULL;
+
+/*Create index to improve performances*/
+CREATE INDEX visits_animal_id_inx ON visits(animal_id);
+CREATE INDEX visits_vet_id_inx ON visits(vet_id);
+CREATE INDEX owners_email_inx ON owners(email);
