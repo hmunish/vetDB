@@ -68,3 +68,11 @@ CREATE TABLE specializations ( species_id int, vet_id int);
 
 /*Add visits table*/
 CREATE TABLE visits (animal_id int, vet_id int, visit_date date);
+
+/*Add email column to owners table*/
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+
+/*Drop Not Null constraints on owners table full_name & age column*/
+ALTER TABLE owners ALTER COLUMN full_name DROP NOT NULL;
+ALTER TABLE owners ALTER COLUMN age DROP NOT NULL;
+
