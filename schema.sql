@@ -76,3 +76,7 @@ ALTER TABLE owners ADD COLUMN email VARCHAR(120);
 ALTER TABLE owners ALTER COLUMN full_name DROP NOT NULL;
 ALTER TABLE owners ALTER COLUMN age DROP NOT NULL;
 
+/*Create index to improve performances*/
+CREATE INDEX visits_animal_id_inx ON visits(animal_id);
+CREATE INDEX visits_vet_id_inx ON visits(vet_id);
+CREATE INDEX owners_email_inx ON owners(email);
